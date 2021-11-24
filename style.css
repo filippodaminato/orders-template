@@ -45,8 +45,7 @@ article {
   background-color: #f0f0f0a2;
 }
 .nav .nav-item {
-  flex: 1;
-  padding: 0.1rem;
+  padding: 0.1rem 0.5rem;
   font-weight: 600;
   font-size: 0.8rem;
 }
