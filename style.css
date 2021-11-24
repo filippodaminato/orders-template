@@ -1,0 +1,188 @@
+body {
+  font-family: "Outfit", sans-serif;
+  color: #5e5656;
+}
+
+small {
+  font-weight: 200;
+  color: #5e5656;
+}
+
+.bolder {
+  font-weight: bolder;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.more-button {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  color: #5c9cff;
+  display: none;
+  padding: 0.2rem 0;
+  font-weight: 700;
+}
+
+article {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 1.5fr 1fr;
+  grid-template-rows: 0.2fr 0.7fr 2fr;
+  grid-template-areas: "nav nav nav nav nav" "icon id status delivery price" "icon content content content price";
+  grid-gap: 0.4rem;
+  border-bottom: 1px solid #dfdfdf;
+  margin: 0.8rem 1rem;
+  padding: 0.3rem;
+}
+
+.nav {
+  grid-area: nav;
+  display: flex;
+  padding: 0.3rem 0.5rem;
+  border-radius: 10px;
+  background-color: #f0f0f0a2;
+}
+.nav .nav-item {
+  flex: 1;
+  padding: 0.1rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.icon {
+  grid-area: icon;
+  padding: 1.2rem;
+  justify-self: center;
+  display: block;
+}
+.icon span {
+  border-radius: 10px;
+  font-weight: 800;
+  padding: 1rem 0.8rem;
+}
+.icon .i-off {
+  color: #ffd95c;
+  border: 4px solid #ffd95c;
+}
+.icon .i-orc {
+  color: #585858;
+  border: 4px solid #585858;
+}
+.icon .i-prc {
+  color: #5c9dff;
+  border: 4px solid #5c9dff;
+}
+.icon .i-com {
+  color: #be5cff;
+  border: 4px solid #be5cff;
+}
+
+.id {
+  grid-area: id;
+  align-self: center;
+  font-size: 1.3rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+}
+.id .id-vl {
+  margin-left: 0.5rem;
+  padding: 0rem 0.5rem;
+  min-height: 1.5rem;
+  border-left: 1px solid #5e5656;
+}
+.id .id-vl span {
+  background-color: #73db73;
+  color: white;
+  padding: 0.1rem 1rem;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+.status {
+  grid-area: status;
+  align-self: center;
+}
+
+.delivery {
+  grid-area: delivery;
+  align-self: center;
+  color: red;
+  font-size: 0.8rem;
+}
+
+.price {
+  grid-area: price;
+  display: flex;
+  text-align: right;
+  flex-direction: column;
+}
+.price .price-item-1 {
+  flex: 1;
+}
+.price .price-item-2 {
+  flex: 1;
+  font-size: 1.5rem;
+  color: black;
+  font-weight: 600;
+}
+
+.content {
+  grid-area: content;
+}
+.content .content h4 {
+  font-weight: lighter;
+  color: black;
+  font-size: 1.1rem;
+}
+
+.orders {
+  font-size: 0.8rem;
+}
+.orders .orders p {
+  margin: 0px;
+}
+
+@media only screen and (max-width: 660px) {
+  article {
+    grid-template-columns: 0.4fr 2fr;
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas: "nav nav" "icon id" "icon status" "delivery delivery" "content content" "price price";
+    grid-gap: 0.4rem;
+  }
+
+  .nav {
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+  }
+
+  .icon {
+    align-self: center;
+    padding: 0px;
+  }
+
+  .price {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .price-item-1 {
+    text-align: left;
+    padding: 0.5rem;
+  }
+
+  .price-item-2 {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+  }
+
+  .more-button {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
