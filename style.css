@@ -4,12 +4,7 @@ body {
 }
 
 small {
-  font-weight: 200;
   color: #5e5656;
-}
-
-.bolder {
-  font-weight: bolder;
 }
 
 .line-through {
@@ -28,10 +23,10 @@ small {
 
 article {
   display: grid;
-  grid-template-columns: 0.5fr 1fr 1fr 1.5fr 1fr;
+  grid-template-columns: min-content auto auto 1fr;
   grid-template-rows: 0.2fr 0.7fr 2fr;
-  grid-template-areas: "nav nav nav nav nav" "icon id status delivery price" "icon content content content price";
-  grid-gap: 0.4rem;
+  grid-template-areas: "nav nav nav nav" "icon title delivery price" "icon info info price";
+  grid-gap: 9px 30px;
   border-bottom: 1px solid #dfdfdf;
   margin: 0.8rem 1rem;
   padding: 0.3rem;
@@ -41,20 +36,26 @@ article {
   grid-area: nav;
   display: flex;
   padding: 0.3rem 0.5rem;
+  padding-left: 45px;
   border-radius: 10px;
+  column-gap: 45px;
   background-color: #f0f0f0a2;
 }
 .nav .nav-item {
   padding: 0.1rem 0.5rem;
-  font-weight: 600;
-  font-size: 0.8rem;
+  font-weight: bold;
+  font-size: 12px;
+}
+.nav small {
+  font-size: 12px;
+  font-weight: 400;
 }
 
 .icon {
   grid-area: icon;
-  padding: 1.2rem;
-  justify-self: center;
-  display: block;
+  display: flex;
+  align-items: flex-start;
+  justify-items: center;
 }
 .icon span {
   border-radius: 10px;
@@ -62,8 +63,8 @@ article {
   padding: 1rem 0.8rem;
 }
 .icon .i-off {
-  color: #ffd95c;
-  border: 4px solid #ffd95c;
+  color: #f6bb43;
+  border: 4px solid #f6bb43;
 }
 .icon .i-orc {
   color: #585858;
@@ -78,40 +79,49 @@ article {
   border: 4px solid #be5cff;
 }
 
-.id {
-  grid-area: id;
-  align-self: center;
-  font-size: 1.3rem;
-  font-weight: 800;
-  display: inline-flex;
+.title {
+  grid-area: title;
+  display: flex;
+  column-gap: 30px;
   align-items: center;
 }
-.id .id-vl {
-  margin-left: 0.5rem;
-  padding: 0rem 0.5rem;
-  min-height: 1.5rem;
+.title .id {
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+.title .id .code {
+  color: black;
+  font-size: 18px;
+  font-weight: 500;
+}
+.title .id-vl {
+  align-self: center;
+  margin-left: 12px;
+  margin-right: 15px;
+  height: 21px;
   border-left: 1px solid #5e5656;
 }
-.id .id-vl span {
-  background-color: #73db73;
+.title .bozza {
+  background-color: #a0d468;
   color: white;
   padding: 0.1rem 1rem;
   border-radius: 5px;
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 14px;
   letter-spacing: 2px;
 }
-
-.status {
-  grid-area: status;
+.title .status {
   align-self: center;
+  font-size: 12px;
 }
 
 .delivery {
   grid-area: delivery;
   align-self: center;
-  color: red;
-  font-size: 0.8rem;
+  color: #da4553;
+  font-size: 12px;
 }
 
 .price {
@@ -122,18 +132,41 @@ article {
 }
 .price .price-item-1 {
   flex: 1;
+  font-weight: normal;
+  color: #525252;
+  font-size: 15px;
+}
+.price .price-item-1 small {
+  font-size: 11px;
 }
 .price .price-item-2 {
   flex: 1;
-  font-size: 1.5rem;
+  font-size: 22px;
   color: black;
-  font-weight: 600;
+  font-weight: 500;
+}
+.price .price-item-2 small {
+  font-weight: 400;
+  color: #525252;
+  font-size: 14px;
 }
 
-.content {
-  grid-area: content;
+.info {
+  grid-area: info;
 }
-.content .content h4 {
+.info .client {
+  margin: 0px;
+  font-weight: bold;
+  font-size: 18px;
+  color: black;
+}
+.info .client span {
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 100;
+  color: #525252;
+}
+.info h4 {
   font-weight: lighter;
   color: black;
   font-size: 1.1rem;
@@ -141,22 +174,36 @@ article {
 
 .orders {
   font-size: 0.8rem;
+  margin-top: 9px;
 }
-.orders .orders p {
+.orders p {
+  font-size: 13px;
   margin: 0px;
+}
+.orders p .bold {
+  font-style: italic;
+  font-weight: bold;
+  color: #525252;
 }
 
 @media only screen and (max-width: 660px) {
   article {
     grid-template-columns: 0.4fr 2fr;
     grid-template-rows: repeat(6, auto);
-    grid-template-areas: "nav nav" "icon id" "icon status" "delivery delivery" "content content" "price price";
+    grid-template-areas: "nav nav" "icon title" "icon title" "delivery delivery" "info info" "price price";
     grid-gap: 0.4rem;
+  }
+
+  .title {
+    display: contents;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 
   .nav {
     flex-direction: column;
     margin-bottom: 0.5rem;
+    padding-left: 0px;
   }
 
   .icon {
