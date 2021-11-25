@@ -84,18 +84,21 @@ article {
   align-items: flex-start;
   justify-items: center;
 
-  span {
+  div {
     border-radius: 10px;
     font-size: 16px;
     font-weight: 800;
     width: 57px;
-    line-height: 57px;
+    height: 57px;
     text-align: center;
   }
 
   @mixin icon-type($color: DarkGray) {
     color: $color;
     border: 4px solid $color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .i-off {
@@ -340,10 +343,10 @@ article {
     align-self: center;
     padding: 0px;
 
-    span {
+    div {
       font-size: 10px;
-      width: 37px;
-      line-height: 37px;
+      width: 40px;
+      height: 40px;
     }
   }
 
