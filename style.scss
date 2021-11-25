@@ -21,10 +21,45 @@ body {
   color: $primary-color;
 }
 
+.dotted-lg {
+  float: left;
+  width: 100%;
+  margin-left: 10px;
+  background-image: linear-gradient(
+    to bottom,
+    #656d78 8px,
+    rgba(255, 255, 255, 0) 0%
+  );
+  background-position: left;
+  background-size: 1px 16px;
+  background-repeat: repeat-y;
+}
+
 small {
   // font-weight: bold;
 
   color: $primary-color;
+}
+
+.date {
+  display: flex;
+  column-gap: 10px;
+  margin-left: -5px;
+  font-size: 14px;
+
+  .dot-col {
+    display: flex;
+    align-items: center;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  .hr-line {
+    width: 15px;
+    border-top: 1px solid $primary-color;
+  }
 }
 
 .line-through {
@@ -97,6 +132,7 @@ article {
     color: $color;
     border: 4px solid $color;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
@@ -281,6 +317,10 @@ article {
     background-color: #ededed;
   }
 
+  .date {
+    display: none;
+  }
+
   article {
     border-top: none;
     grid-template-columns: 0.4fr 2fr;
@@ -303,6 +343,11 @@ article {
     p {
       font-size: 10px;
     }
+  }
+
+  .dotted-lg {
+    background: none;
+    margin: 0px;
   }
 
   .info {
