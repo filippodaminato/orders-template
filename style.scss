@@ -4,15 +4,17 @@ $primary-color: #5e5656;
 $bg-nav: #fafafa;
 
 $color-bozze: #a0d468;
-$color-more-button: #5c9cff;
+$color-more-button: #4b89dc;
 
 $off-color: #f6bb43;
 $prc-color: #5c9dff;
 $orc-color: #585858;
 $com-color: #be5cff;
 $deal-color: #fb6e52;
+$rfx-color: #4b89dc;
 
 $color-delivery: #da4553;
+$color-approvazione: #5d9bec;
 
 body {
   font-family: $font-stack;
@@ -33,10 +35,11 @@ small {
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
+  font-style: italic;
   color: $color-more-button;
   display: none;
   padding: 0.2rem 0;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 article {
@@ -59,8 +62,6 @@ article {
   grid-area: nav;
   display: flex;
   padding: 0.3rem 0.5rem;
-  // padding-left: 45px;
-  border-radius: 10px;
   column-gap: 45px;
   background-color: $bg-nav;
 
@@ -68,6 +69,7 @@ article {
     padding: 0.1rem 0.5rem;
     font-weight: bold;
     font-size: 12px;
+    line-height: 15px;
   }
 
   small {
@@ -84,6 +86,7 @@ article {
 
   span {
     border-radius: 10px;
+    font-size: 16px;
     font-weight: 800;
     width: 57px;
     line-height: 57px;
@@ -114,12 +117,16 @@ article {
   .i-com {
     @include icon-type($com-color);
   }
+
+  .i-rfx {
+    @include icon-type($rfx-color);
+  }
 }
 
 .title {
   grid-area: title;
   display: flex;
-  column-gap: 30px;
+  // column-gap: 30px;
   align-items: center;
 
   .id {
@@ -134,6 +141,23 @@ article {
       font-weight: 500;
     }
   }
+
+  @mixin vertical-line() {
+    align-self: center;
+    margin-left: 12px;
+    margin-right: 15px;
+    height: 21px;
+    border-left: 1px solid $primary-color;
+  }
+
+  .v-line {
+    @include vertical-line();
+  }
+
+  .v-line-lg {
+    @include vertical-line();
+  }
+
   .id-vl {
     align-self: center;
     margin-left: 12px;
@@ -149,11 +173,24 @@ article {
     font-weight: 500;
     font-size: 14px;
     letter-spacing: 2px;
+    margin-right: 30px;
   }
 
   .status {
     align-self: center;
     font-size: 12px;
+  }
+
+  .status-bold {
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .status-blue {
+    font-style: oblique;
+    color: $color-approvazione;
+    font-weight: 600;
+    font-size: 14px;
   }
 }
 
@@ -236,7 +273,13 @@ article {
 }
 
 @media only screen and (max-width: 660px) {
+  .nav {
+    border-radius: 10px;
+    background-color: #ededed;
+  }
+
   article {
+    border-top: none;
     grid-template-columns: 0.4fr 2fr;
     grid-template-rows: repeat(6, auto);
     grid-template-areas:
@@ -246,13 +289,45 @@ article {
       "delivery delivery"
       "info info"
       "price price";
-    grid-gap: 0.4rem;
+    grid-gap: 0.2rem;
+  }
+
+  .v-line-lg {
+    display: none;
+  }
+
+  .orders {
+    p {
+      font-size: 10px;
+    }
+  }
+
+  .info {
+    .client {
+      font-size: 14px;
+    }
+  }
+
+  .delivery {
+    font-size: 11px;
   }
 
   .title {
     display: contents;
     flex-direction: column;
     justify-content: flex-start;
+
+    .id {
+      .code {
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+
+    .status-blue {
+      font-weight: normal;
+      font-size: 10px;
+    }
   }
 
   .nav {
@@ -264,6 +339,12 @@ article {
   .icon {
     align-self: center;
     padding: 0px;
+
+    span {
+      font-size: 10px;
+      width: 37px;
+      line-height: 37px;
+    }
   }
 
   .price {
@@ -273,12 +354,12 @@ article {
 
   .price-item-1 {
     text-align: left;
-    padding: 0.5rem;
+    align-content: space-between;
   }
 
   .price-item-2 {
-    font-size: 1.2rem;
-    padding: 0.5rem;
+    font-size: 19px;
+    font-weight: 600;
   }
 
   .more-button {
