@@ -1,7 +1,7 @@
 $font-stack: "Poppins", sans-serif;
 $primary-color: #5e5656;
 
-$bg-nav: #f0f0f0a2;
+$bg-nav: #fafafa;
 
 $color-bozze: #a0d468;
 $color-more-button: #5c9cff;
@@ -10,6 +10,7 @@ $off-color: #f6bb43;
 $prc-color: #5c9dff;
 $orc-color: #585858;
 $com-color: #be5cff;
+$deal-color: #fb6e52;
 
 $color-delivery: #da4553;
 
@@ -49,15 +50,16 @@ article {
 
   grid-gap: 9px 30px;
   border-bottom: 1px solid rgb(223, 223, 223);
-  margin: 0.8rem 1rem;
-  padding: 0.3rem;
+  border-top: 1px solid rgb(223, 223, 223);
+  margin: 20px;
+  padding-bottom: 9px;
 }
 
 .nav {
   grid-area: nav;
   display: flex;
   padding: 0.3rem 0.5rem;
-  padding-left: 45px;
+  // padding-left: 45px;
   border-radius: 10px;
   column-gap: 45px;
   background-color: $bg-nav;
@@ -83,7 +85,9 @@ article {
   span {
     border-radius: 10px;
     font-weight: 800;
-    padding: 1rem 0.8rem;
+    width: 57px;
+    line-height: 57px;
+    text-align: center;
   }
 
   @mixin icon-type($color: DarkGray) {
@@ -93,6 +97,10 @@ article {
 
   .i-off {
     @include icon-type($off-color);
+  }
+
+  .i-deal {
+    @include icon-type($deal-color);
   }
 
   .i-orc {
