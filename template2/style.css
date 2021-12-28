@@ -12,6 +12,15 @@ article {
   padding-bottom: 9px;
 }
 
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.heart-sm {
+  display: none;
+}
+
 .green .no-image {
   border: 3px solid #8cc051;
 }
@@ -24,8 +33,25 @@ article {
   stroke: rgba(218, 69, 83, 0.14) !important;
 }
 
+.potential .potential-pic {
+  display: block !important;
+}
+
 .profile-pic {
   grid-area: profile-pic;
+  position: relative;
+}
+.profile-pic .potential-pic {
+  display: none;
+  position: absolute;
+  width: 100%;
+  background-color: #f6bb43;
+  color: white;
+  font-size: 11px;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 4px 4px 0 0;
+  padding: 2px 0;
 }
 .profile-pic .no-image {
   display: flex;
@@ -34,10 +60,22 @@ article {
   font-weight: bold;
   font-size: 18px;
   width: 68px;
-  border-radius: 4px;
   height: 68px;
+  border-radius: 4px;
   color: #aab2bd;
   background-color: #e6e9ee;
+}
+.profile-pic .image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 68px;
+  border-radius: 4px;
+  border: 1px solid #e6e9ee;
+}
+.profile-pic .image img {
+  width: 100%;
 }
 .profile-pic .green-border {
   border: 3px solid #8cc051;
@@ -53,6 +91,37 @@ article {
   width: 20px;
 }
 
+.number {
+  background-color: #e6e9ee;
+  border-color: #656d78;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.number-lg {
+  margin-left: 10px;
+  height: 21px;
+  width: 21px;
+  border: solid 2px;
+}
+.number-lg span {
+  padding: 3px;
+  font-size: 11px;
+}
+
+.number-sm {
+  display: none;
+  height: 17px;
+  width: 17px;
+  border: solid 1px;
+}
+.number-sm span {
+  padding: 3px;
+  font-size: 8px;
+}
+
 .desc {
   grid-area: desc;
   display: flex;
@@ -60,16 +129,35 @@ article {
   line-height: 25px;
 }
 .desc .id {
+  display: flex;
+  align-items: center;
+}
+.desc .id span {
   font-size: 12px;
   font-weight: 400;
   color: #656d78;
+}
+.desc .id svg {
+  margin-left: 5px;
 }
 .desc .title {
   font-size: 19px;
   font-weight: bold;
   color: #000000;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+}
+.desc .title .potential-sm {
+  display: none;
+  margin-left: 10px;
+}
+.desc .title .potential-sm span {
+  background-color: #f6bb43;
+  color: white;
+  font-size: 8px;
+  font-weight: 500;
+  padding: 3px;
+  border-radius: 3px;
 }
 .desc .title svg {
   margin-left: 10px;
@@ -115,16 +203,28 @@ article {
 @media only screen and (max-width: 660px) {
   article {
     display: grid;
-    grid-template-columns: min-content 1fr 0.2fr;
+    grid-template-columns: min-content 1fr 0.1fr;
     grid-template-areas: "profile-pic desc none" "profile-pic info none";
     margin: 15px 0;
     grid-gap: 7px 15px;
   }
 
+  .potential .potential-sm {
+    display: block !important;
+  }
+
+  .profile-pic .potential-pic {
+    font-size: 6px;
+    padding: 0px;
+  }
   .profile-pic .no-image {
     width: 34px;
     height: 34px;
     font-size: 12px;
+  }
+  .profile-pic .image {
+    width: 34px;
+    height: 34px;
   }
   .profile-pic .circle svg {
     width: 10px;
@@ -136,8 +236,11 @@ article {
   .desc {
     line-height: 20px;
   }
-  .desc .id {
+  .desc .id span {
     font-size: 10px;
+  }
+  .desc .id svg {
+    display: none;
   }
   .desc .title {
     font-size: 18px;
@@ -160,6 +263,20 @@ article {
   .info .tel {
     justify-content: left;
     font-size: 12px;
+  }
+
+  .number-lg {
+    display: none;
+  }
+
+  .number-sm {
+    display: flex;
+    margin-top: 20px;
+  }
+
+  .heart-sm {
+    display: flex;
+    margin-top: 20px;
   }
 }
 
