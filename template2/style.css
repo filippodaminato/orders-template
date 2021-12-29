@@ -156,7 +156,7 @@ article {
   color: white;
   font-size: 8px;
   font-weight: 500;
-  padding: 3px;
+  padding: 2px 7px;
   border-radius: 3px;
 }
 .desc .title svg {
@@ -189,7 +189,7 @@ article {
 .info .tel {
   font-size: 13px;
   font-weight: 500;
-  color: #434a54;
+  color: #656d78;
 }
 .info .tel svg {
   margin-right: 10px;
@@ -197,7 +197,7 @@ article {
 .info .mail {
   font-size: 13px;
   font-weight: 500;
-  color: #434a54;
+  color: #656d78;
 }
 
 @media only screen and (max-width: 660px) {
@@ -263,6 +263,9 @@ article {
   .info .tel {
     justify-content: left;
     font-size: 12px;
+  }
+  .info .mail {
+    font-size: 10px;
   }
 
   .number-lg {

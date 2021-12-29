@@ -178,7 +178,7 @@ article {
         color: white;
         font-size: 8px;
         font-weight: 500;
-        padding: 3px;
+        padding: 2px 7px;
         border-radius: 3px;
       }
     }
@@ -217,7 +217,7 @@ article {
   .tel {
     font-size: 13px;
     font-weight: 500;
-    color: #434a54;
+    color: #656d78;
     svg {
       margin-right: 10px;
     }
@@ -226,7 +226,7 @@ article {
   .mail {
     font-size: 13px;
     font-weight: 500;
-    color: #434a54;
+    color: #656d78;
   }
 }
 
@@ -309,6 +309,10 @@ article {
     .tel {
       justify-content: left;
       font-size: 12px;
+    }
+
+    .mail {
+      font-size: 10px;
     }
   }
 
