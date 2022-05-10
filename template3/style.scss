@@ -1,0 +1,101 @@
+$font-stack: "Poppins", sans-serif;
+$primary-color: #5e5656;
+
+$bg-nav: #fafafa;
+
+$color-bozze: #a0d468;
+$color-more-button: #4b89dc;
+
+$off-color: #f6bb43;
+$prc-color: #5c9dff;
+$orc-color: #585858;
+$com-color: #be5cff;
+$deal-color: #fb6e52;
+$rfx-color: #4b89dc;
+
+$color-delivery: #da4553;
+$color-approvazione: #5d9bec;
+
+// new defs
+$nav-border-color: #EFF0F3;
+$color-warning: #FB6E51;
+
+body {
+  font-family: $font-stack;
+  color: $primary-color;
+  margin: 0px;
+}
+
+header{
+    width: 100%;
+    height: 41px;
+    line-height: 41px;
+    display: inline-grid; 
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "logo nav";
+    border-bottom: 1px solid $nav-border-color;
+    
+    .logo{
+    
+        
+        img{
+            padding: 0px 20px;
+            width: 125px;
+            height: auto;
+            display: inline-block;
+            vertical-align: middle;
+            border-right: 1px solid $nav-border-color;
+        }
+
+        
+
+        .message{
+            margin-left: 20px;
+            padding: 3px 15px;
+            text-transform: uppercase;
+            font-size: 14px;
+            color: $color-warning;
+            border: 1px solid $color-warning;
+            border-radius: 5px;
+        }
+    }
+
+    .nav{
+
+        ul{
+            display: flex;
+            list-style: none;
+            justify-content: end;
+            column-gap: 32px;
+            margin: 0px;
+            padding: 0px;
+            padding-right: 20px;
+
+
+
+            a{
+                text-decoration: none;
+                color: #000;
+                svg{
+                display: inline-block;
+                vertical-align: middle;
+                }
+
+                span{
+                    font-size: 12px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+}
+
+
+.vl {
+    align-self: center;
+    margin-left: 12px;
+    margin-right: 15px;
+    height: 5px;
+    border-left: 1px solid $nav-border-color;
+}
