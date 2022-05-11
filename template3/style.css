@@ -43,7 +43,7 @@ header .nav {
 }
 header .nav ul {
   display: grid;
-  grid-template-columns: 1fr repeat(4, fit-content(50px));
+  grid-template-columns: 1fr repeat(5, fit-content(50px));
   grid-gap: 32px;
   justify-items: end;
   justify-content: end;
@@ -64,6 +64,14 @@ header .nav ul a svg {
 header .nav ul a span {
   font-size: 12px;
   text-transform: uppercase;
+}
+header .nav ul .profile {
+  font-size: 9px;
+  padding: 5px;
+  background-color: #E6E9EE;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .order {

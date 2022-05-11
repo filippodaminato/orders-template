@@ -20,6 +20,7 @@ $color-approvazione: #5d9bec;
 // navs defs
 $nav-border-color: #EFF0F3;
 $color-warning: #FB6E51;
+$bg-profile: #E6E9EE;
 $bg-subnav: #F9F9F9;
 $subnav-btn-active-color: #fb6e52;
 $subnav-btn-color: #434A54;
@@ -78,7 +79,7 @@ header{
 
         ul{
             display: grid;
-            grid-template-columns: 1fr repeat(4, fit-content(50px));
+            grid-template-columns: 1fr repeat(5, fit-content(50px));
             grid-gap: 32px;
             justify-items: end;
             justify-content: end;
@@ -101,6 +102,15 @@ header{
                     font-size: 12px;
                     text-transform: uppercase;
                 }
+            }
+
+            .profile{
+                font-size: 9px;
+                padding: 5px;
+                background-color: $bg-profile;
+                border-radius: 50%;
+                display: inline-block;
+    vertical-align: middle;
             }
         }
     }
