@@ -84,9 +84,6 @@ article .back-row {
 }
 article .icon {
   grid-area: icon;
-  display: flex;
-  align-items: flex-start;
-  justify-items: center;
 }
 article .icon div {
   border-radius: 10px;
@@ -145,17 +142,14 @@ article .icon .i-rfx {
   align-items: center;
 }
 article .title {
-  grid-area: title;
-  display: flex;
-  align-items: center;
-}
-article .title .id {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 15px;
   align-items: center;
   font-size: 1.3rem;
   font-weight: 800;
 }
-article .title .id .code {
+article .title .code {
   color: black;
   font-size: 18px;
   font-weight: 500;
@@ -181,7 +175,12 @@ article .title .id-vl {
   height: 21px;
   border-left: 1px solid #5e5656;
 }
+article .title .message {
+  border-left: 1px solid #5e5656;
+  padding-left: 12px;
+}
 article .title .bozza {
+  vertical-align: middle;
   background-color: #a0d468;
   color: white;
   padding: 0.1rem 1rem;
@@ -192,6 +191,7 @@ article .title .bozza {
   margin-right: 30px;
 }
 article .title .status {
+  font-weight: 500;
   align-self: center;
   font-size: 12px;
 }
@@ -213,7 +213,6 @@ article .delivery {
 }
 article .price {
   grid-area: price;
-  display: flex;
   text-align: right;
   flex-direction: column;
   justify-content: end;
