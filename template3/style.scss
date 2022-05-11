@@ -19,6 +19,10 @@ $color-approvazione: #5d9bec;
 // new defs
 $nav-border-color: #EFF0F3;
 $color-warning: #FB6E51;
+$bg-subnav: #F9F9F9;
+$subnav-btn-active-color: #fb6e52;
+$subnav-btn-color: #434A54;
+$subnav-btn-checkout-color: #f6bb43;
 
 body {
   font-family: $font-stack;
@@ -30,7 +34,7 @@ header{
     width: 100%;
     height: 41px;
     line-height: 41px;
-    display: inline-grid; 
+    display: grid; 
     grid-template-columns: auto 1fr;
     grid-template-areas: "logo nav";
     border-bottom: 1px solid $nav-border-color;
@@ -63,15 +67,17 @@ header{
     .nav{
 
         ul{
-            display: flex;
-            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr repeat(4, fit-content(50px));
+            grid-gap: 32px;
+            justify-items: end;
             justify-content: end;
+
             column-gap: 32px;
+            list-style-type: none;
             margin: 0px;
-            padding: 0px;
+            padding: 0px;  
             padding-right: 20px;
-
-
 
             a{
                 text-decoration: none;
@@ -91,6 +97,359 @@ header{
 
 }
 
+article {
+    display: grid;
+    grid-template-columns: auto min-content auto auto 1fr;
+    grid-template-rows: 0.7fr 1fr;
+    grid-template-areas:
+      "rowback icon title delivery delivery"
+      "rowback icon info info price";
+  
+    grid-gap: 9px 30px;
+    padding: 20px 15px 10px 15px;
+
+    .back-row{
+        grid-area: rowback;
+        align-self: center;
+    }
+
+    .icon {
+    grid-area: icon;
+    display: flex;
+    align-items: flex-start;
+    justify-items: center;
+
+    div {
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 800;
+        width: 57px;
+        height: 57px;
+        text-align: center;
+    }
+
+    @mixin icon-type($color: DarkGray) {
+        color: $color;
+        border: 4px solid $color;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .i-off {
+        @include icon-type($off-color);
+    }
+
+    .i-deal {
+        @include icon-type($deal-color);
+    }
+
+    .i-orc {
+        @include icon-type($orc-color);
+    }
+
+    .i-prc {
+        @include icon-type($prc-color);
+    }
+
+    .i-com {
+        @include icon-type($com-color);
+    }
+
+    .i-rfx {
+        @include icon-type($rfx-color);
+    }
+    }
+
+    .title {
+    grid-area: title;
+    display: flex;
+    // column-gap: 30px;
+    align-items: center;
+
+    .id {
+        display: flex;
+        align-items: center;
+        font-size: 1.3rem;
+        font-weight: 800;
+
+        .code {
+        color: black;
+        font-size: 18px;
+        font-weight: 500;
+        }
+    }
+
+    @mixin vertical-line() {
+        align-self: center;
+        margin-left: 12px;
+        margin-right: 15px;
+        height: 21px;
+        border-left: 1px solid $primary-color;
+    }
+
+    .v-line {
+        @include vertical-line();
+    }
+
+    .v-line-lg {
+        @include vertical-line();
+    }
+
+    .id-vl {
+        align-self: center;
+        margin-left: 12px;
+        margin-right: 15px;
+        height: 21px;
+        border-left: 1px solid $primary-color;
+    }
+    .bozza {
+        background-color: $color-bozze;
+        color: white;
+        padding: 0.1rem 1rem;
+        border-radius: 5px;
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: 2px;
+        margin-right: 30px;
+    }
+
+    .status {
+        align-self: center;
+        font-size: 12px;
+    }
+
+    .status-bold {
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    .status-blue {
+        font-style: oblique;
+        color: $color-approvazione;
+        font-weight: 600;
+        font-size: 14px;
+    }
+    }
+
+    .delivery {
+    grid-area: delivery;
+    align-self: center;
+    color: $color-delivery;
+    font-size: 12px;
+    }
+
+    .price {
+    grid-area: price;
+    display: flex;
+    text-align: right;
+    flex-direction: column;
+    justify-content: end;
+
+    .price-item-1 {
+        flex: 1;
+        font-weight: normal;
+        color: #525252;
+        font-size: 15px;
+
+        small {
+        font-size: 11px;
+        }
+    }
+
+    .price-item-2 {
+    //   flex: 1;
+        font-size: 22px;
+        color: black;
+        font-weight: 500;
+
+        small {
+        font-weight: 400;
+        color: #525252;
+        font-size: 14px;
+        }
+    }
+    }
+
+    .info {
+    grid-area: info;
+
+    .client {
+        margin: 0px;
+        font-weight: bold;
+        font-size: 18px;
+        color: black;
+
+        span {
+        font-size: 12px;
+        font-style: italic;
+        font-weight: 100;
+        color: #525252;
+        }
+    }
+
+    h4 {
+        font-weight: lighter;
+        color: black;
+        font-size: 1.1rem;
+    }
+    }
+
+    .orders {
+    font-size: 0.8rem;
+    margin-top: 9px;
+
+    p {
+        font-size: 13px;
+        margin: 0px;
+
+        .bold {
+        font-style: italic;
+        font-weight: bold;
+        color: #525252;
+        }
+    }
+    }
+
+}
+
+.subnav{
+
+    width: 100%;
+    background-color: $bg-subnav;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0px;
+    padding: 10px 0px;
+
+    nav.menu-left{
+
+        padding-left: 20px;
+
+        ul{
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            justify-items: center;
+            justify-content: start;
+            align-items: center;
+
+            column-gap: 32px;
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;  
+
+            a{
+                text-decoration: none;
+                color: #000;
+                svg{
+                display: inline-block;
+                vertical-align: middle;
+                }
+            }
+
+            .btn{
+
+                font-size: 12px;
+                padding: 7px 10px;
+                color: $subnav-btn-color;
+
+                svg{
+                    margin-right: 5px;
+                    stroke: $subnav-btn-color;;
+                }
+
+                span{
+                    z-index: 2;
+                }
+
+                .order-rows{
+                    font-size: 10px;
+                    border-radius: 3px;
+                    padding: 2px 3px;
+                    border: 0.5px solid $primary-color;
+                    margin-left: 10px;
+                }
+            }
+
+            .btn-active{
+                position: relative;
+                color: white;
+                background-color: $subnav-btn-active-color;
+                border-radius: 5px;
+                z-index: 2;
+
+                .order-rows{
+                    border-color: #fff;
+                }
+                
+
+                svg{
+                    stroke: #fff;
+                }
+
+                :after{
+                    content: "";
+                    height: 12px;
+                    width: 12px;
+                    background-color: $subnav-btn-active-color;
+                    position: absolute;
+                    left: 50%;
+                    bottom: -5px;
+                    z-index: -1;
+                    transform: rotate(-45deg);
+                    
+                }
+
+
+            }
+        }
+    }
+
+    nav.menu-right{
+
+        padding-right: 20px;
+
+        ul{
+            display: grid;
+            grid-template-columns: repeat(4, auto);
+            grid-gap: 32px;
+            justify-items: center;
+            justify-content: end;
+            align-items: center;
+
+            column-gap: 32px;
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;  
+
+            a{
+                text-decoration: none;
+                color: #000;
+                svg{
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+
+                span{
+                    font-size: 12px;
+                    text-transform: uppercase;
+                }
+            }
+
+            .btn-checkout{
+                background-color: $subnav-btn-checkout-color;
+                color: white;
+                font-size: 12px;
+                font-weight: bold;
+                padding: 10px 40px;
+                border-radius: 5px;
+            }
+        }
+    }
+
+}
 
 .vl {
     align-self: center;
