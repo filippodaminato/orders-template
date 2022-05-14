@@ -74,6 +74,8 @@ body {
   text-align: center;
   width: 100%;
   margin: 70px 0px;
+  justify-self: center;
+  width: 600px;
 }
 .alert .message h1 {
   line-height: 60px;
@@ -89,10 +91,16 @@ body {
   color: black;
   margin: 0px;
 }
-.alert .info {
-  font-family: "Helvetica Neue", sans-serif;
+.alert .info-2c {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+.alert .info-3c {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.alert .info {
+  font-family: "Helvetica Neue", sans-serif;
   padding: 0 50px;
   justify-items: center;
 }
@@ -133,14 +141,19 @@ body {
   margin-top: 50px;
 }
 .alert .actions button {
-  background-color: #8CC051;
-  color: white;
   border: none;
   border-radius: 5px;
   font-size: 15px;
   font-weight: bold;
-  width: 215px;
-  height: 49px;
+  padding: 15px 40px;
+}
+.alert .actions .gray {
+  background-color: #656D78;
+  color: white;
+}
+.alert .actions .success {
+  background-color: #8CC051;
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */

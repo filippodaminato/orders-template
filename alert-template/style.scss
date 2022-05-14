@@ -13,6 +13,7 @@ $font-helvetica-neue: "Helvetica Neue", sans-serif;
 $border-color: #AAB2BD;
 $info-title-color: #707070 ;
 $btn-alert-success: #8CC051;
+$btn-alert-gray: #656D78;
 $hr-color: #E2E2E2;
 $info-red-color: #DA4553;
 
@@ -97,6 +98,10 @@ $info-red-color: #DA4553;
         text-align: center;
         width: 100%;
         margin: 70px 0px;
+        
+        justify-self: center;
+        width: 600px;
+
 
         h1{
             line-height: 60px;
@@ -115,12 +120,19 @@ $info-red-color: #DA4553;
         }
     }
 
-    .info{
-        font-family: $font-helvetica-neue;
+    .info-2c{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        padding: 0 50px;
+    }
 
+    .info-3c{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .info{
+        font-family: $font-helvetica-neue;
+        padding: 0 50px;
         justify-items: center;
 
         .info-col{
@@ -173,16 +185,26 @@ $info-red-color: #DA4553;
         margin-top: 50px;
 
         button{
-            background-color: $btn-alert-success;
-            color: white;
+            
             border: none;
             border-radius: 5px;
             font-size: 15px;
             font-weight: bold;
+            padding: 15px 40px;
 
-            width: 215px;
-            height: 49px;
         }
+
+        .gray{
+            background-color: $btn-alert-gray;
+            color: white;
+        }
+
+        .success{
+            background-color: $btn-alert-success;
+            color: white;
+        }
+
+
     }
 
 
