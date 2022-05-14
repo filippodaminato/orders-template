@@ -1,0 +1,146 @@
+body {
+  font-family: "Poppins", sans-serif;
+  color: #5e5656;
+  margin: 0px;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.alert {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+  border: 1px solid #AAB2BD;
+  padding: 2% 0px;
+  border-radius: 10px;
+}
+.alert .steps {
+  font-family: "Helvetica Neue", sans-serif;
+  color: #000;
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  column-gap: 50px;
+  justify-items: center;
+}
+.alert .steps .icons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+.alert .steps .icons :before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-top: 2px solid #AAB2BD;
+  background: #AAB2BD;
+  width: 70%;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+}
+.alert .steps .icons .circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #AAB2BD;
+  background-color: white;
+}
+.alert .steps .text {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 5px;
+  font-size: 15px;
+  font-weight: 200;
+}
+.alert .steps .text .active {
+  color: black;
+  font-weight: 400;
+}
+.alert .message {
+  text-align: center;
+  width: 100%;
+  margin: 70px 0px;
+}
+.alert .message h1 {
+  line-height: 60px;
+  font-size: 40px;
+  font-weight: bold;
+  color: black;
+  margin: 0px;
+}
+.alert .message h2 {
+  line-height: 60px;
+  font-size: 40px;
+  font-weight: 400;
+  color: black;
+  margin: 0px;
+}
+.alert .info {
+  font-family: "Helvetica Neue", sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 50px;
+  justify-items: center;
+}
+.alert .info .info-col .title {
+  font-size: 15px;
+  font-weight: 500;
+  color: #707070;
+}
+.alert .info .info-col hr {
+  margin-top: 5px;
+  color: #E2E2E2;
+}
+.alert .info .info-col .data {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+}
+.alert .info .info-col .data .title {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 500;
+  color: black;
+  margin-bottom: 5px;
+}
+.alert .info .info-col .data span {
+  line-height: 24px;
+  font-size: 15px;
+  font-weight: 300;
+  color: #707070;
+}
+.alert .info .info-col .data .red {
+  color: #DA4553 !important;
+}
+.alert .info .info-col .data b {
+  color: black;
+}
+.alert .actions {
+  text-align: center;
+  margin-top: 50px;
+}
+.alert .actions button {
+  background-color: #8CC051;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  width: 215px;
+  height: 49px;
+}
+
+/*# sourceMappingURL=style.css.map */
