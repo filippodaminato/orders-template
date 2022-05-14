@@ -191,6 +191,7 @@ $info-red-color: #DA4553;
             font-size: 15px;
             font-weight: bold;
             padding: 15px 40px;
+            min-width: 215px;
 
         }
 
@@ -202,6 +203,7 @@ $info-red-color: #DA4553;
         .success{
             background-color: $btn-alert-success;
             color: white;
+
         }
 
 
